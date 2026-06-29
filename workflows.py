@@ -46,3 +46,23 @@ def simulate_flow():
     print("Verified:", engine.verify(chash, sig, "key123"))
     print("History size:", len(engine.history))
     return engine
+
+def audit(engine):
+    print("Audit trail:")
+    for item in engine.history:
+        print(item)
+
+def summary(engine):
+    print("Summary report generated")
+    print("Total records:", len(engine.history))
+
+def main():
+    engine = simulate_flow()
+    audit(engine)
+    summary(engine)
+    print("Process complete")
+
+if __name__ == "__main__":
+    main()
+
+print("Session closed safely")
